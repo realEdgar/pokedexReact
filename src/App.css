@@ -3,6 +3,7 @@
 }
 .pokedex {
   width: 100%;
+  min-width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +25,7 @@
 }
 .pokemon-info {
   width: 320px;
-  height: 320px;
+  height: 350px;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #fff;
@@ -144,6 +145,29 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+.type__containers {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}    
+.list__types {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.type {
+  list-style: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+}
 .fire {
   background-color: #e64110;
 }
@@ -171,9 +195,11 @@
   background-color: yellow;
 }
 .ground {
+  color: #fff;
   background-color: #8b6218;
 }
 .fairy {
+  color: black;
   background-color: pink;
 }
 .fighting {
@@ -187,6 +213,7 @@
   background-color: gray;
 }
 .ghost {
+  color: black;
   background-color: #bd94b4;
 }
 .ice {
@@ -202,6 +229,7 @@
   background-color: #292929;
 }
 .steel {
+  color: black;
   background-color: #bdcde6;
 }
 .flying {

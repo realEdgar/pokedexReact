@@ -6,7 +6,7 @@ const base_url = 'https://pokeapi.co/api/v2/pokemon/';
 const getData = async (url, setPokemons, setLoading) => {
   const container = [];
   setLoading(true)
-  for (let i = 1; i <= 898; i++) {
+  for (let i = 1; i <= 1118; i++) {
     const response = await fetch(`${url}${i}`);
     const data = await response.json();
     

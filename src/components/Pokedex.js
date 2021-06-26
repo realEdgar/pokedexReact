@@ -7,7 +7,7 @@ export const Pokedex = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState('');
-  const RandomId = Math.floor(Math.random() * 806 + 1);
+  const RandomId = Math.floor(Math.random() * 898) + 1;
   const [pokemonID, setPokemonId] = useState(RandomId);
 
   useEffect(() => {
