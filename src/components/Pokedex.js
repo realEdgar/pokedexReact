@@ -14,7 +14,6 @@ export const Pokedex = () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       setPokemon(data);
       setLoading(false);
       setError(false);

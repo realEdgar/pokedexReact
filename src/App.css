@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #9c0404;
+  background-color: #56aaf9;
 }
 .pokedex-left {
   width: 100%;
@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ff0028;
+  /* background-color: #ff0028; */
 }
 .pokedex-screen {
   width: 100%;
@@ -27,8 +27,8 @@
   width: 320px;
   height: 350px;
   padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #fff;
+  border-radius: 10px;  
+  border: 1px solid rgba(0, 0, 0, 0.5);
   margin: 0 auto;
   margin-bottom: 20px;
   position: relative;
@@ -58,7 +58,9 @@
 .stat__list li {
   font-size: 1.4rem
 }
-
+.title__types {
+  font-size: 1.6rem;
+}
 .pokemon-form {
   width: 320px;
   height: 100px;
@@ -70,45 +72,41 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  border-color: #fff;
   justify-content: center;
 }
 .pokemon-form fieldset legend {
   font-size: 1.4rem;
   margin: 0 10px;
-  color: #fff;
 }
 .pokemon-input {
   width: 160px;
   height: 40px;
   margin-right: 20px;
   outline: none;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.4);
-  font-size: 2.4rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #56baff;
+  font-size: 2rem;
   text-align: center;
 }
 ::placeholder {
-  color: rgba(0,0,0,0.2)
+  color: rgba(0,0,0,0.4)
 }
 
 .pokemon-btn {
   width: 70px;
   height: 35px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
-  background-color: transparent;
-  color: #fff;
 }
 .pokemon-btn:hover {
-  color: #9c0404;
-  background-color: #fff;
-  font-weight: bold;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .pokedex-right {
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
 }
 .pokedex-right h1 {
   color: #fff;
@@ -127,8 +125,7 @@
   width: 140px;
   height: 140px;
   margin: 5px;
-  /* border: 1px solid black; */
-  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
   border-radius: 10px;
   display: flex;
@@ -137,6 +134,7 @@
   justify-content: space-evenly;
   position: relative;
   z-index: 2;
+  background-color: #fff;
 }
 .PokemonCard:hover {
   cursor: pointer;
@@ -240,6 +238,7 @@
   .pokedex {
     flex-direction: row;
     position: relative;
+    
   }
   .pokedex-left {
     width: 50%;
@@ -248,15 +247,14 @@
     top: 0;
     bottom: 0;
     left: 0;
-  }
-  .pokemon-screen {
-    
+    background-color: #56aaf9;
   }
   .pokedex-right {
     width: 50%;
     position: absolute;
     top: 0;
     right: 0;
+    background-color: #56aaf9;
   }
 }
 @media (min-width: 850px) {

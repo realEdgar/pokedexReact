@@ -1,41 +1,36 @@
 import { Loading } from './Loading';
 import {useState, useEffect} from 'react';
 
-const base_url = 'https://pokeapi.co/api/v2/pokemon/';
-
-const getData = async (url, setPokemons, setLoading) => {
-  const container = [];
-  setLoading(true)
-  for (let i = 1; i <= 1118; i++) {
-    const response = await fetch(`${url}${i}`);
-    const data = await response.json();
-    
-    container.push(data);
-  }
-  setPokemons(container);
-  setLoading(false)
-}
+const base_url = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898';
 
 export const AllPokemons = ({setPokemonId}) => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData(base_url, setPokemons, setLoading);
+    fetch(base_url)
+      .then(res => {
+        return res.json()
+      })
+      .then(({results}) => {
+        setPokemons(results)
+        setLoading(false)
+      })
+      .catch(err => console.log(err));
   }, [])
   
   const handleClick = (ev) => {
-    setPokemonId(ev.target.id);
+    setPokemonId(Number(ev.target.id) + 1);
   }
 
   return (
     <div className="pokemons-container">
     {
-      !pokemons || loading ? <Loading title="Loading Pokemons..."/> : pokemons.map(pokemon => {
+      !pokemons || loading ? <Loading title="Loading Pokemons..."/> : pokemons.map((pokemon, id) => {
         return (
-          <article key={pokemon.id} className={"PokemonCard " + pokemon.types[0].type.name} onClick={handleClick} id={pokemon.id}>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} id={pokemon.id}/>
-            <p className="PokemonName" id={pokemon.id}>{pokemon.id}. {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
+          <article key={id} className={"PokemonCard"} onClick={handleClick} id={id+1}>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id+1}.png`} alt={pokemon.name} id={id}/>
+            <p className="PokemonName" id={id+1}>{id+1}. {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
           </article>
         )
       })

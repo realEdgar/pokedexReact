@@ -11,8 +11,7 @@ const useStyles = makeStyles(() => ({
   },
   pharagraph: {
     marginTop: 10,
-    fontSize: 14,
-    color: 'white'
+    fontSize: 14
   }
 }));
 

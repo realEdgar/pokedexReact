@@ -28,7 +28,7 @@ export const PokedexScreen = ({ pokemon, loading, error }) => {
             </ul>
           </div>
           <div className="type__containers">
-            <h4>Type(s):</h4>
+            <h4 className="title__types">Type(s):</h4>
             <ul className="list__types">
               {
                 pokemon.types.map((type) => {
